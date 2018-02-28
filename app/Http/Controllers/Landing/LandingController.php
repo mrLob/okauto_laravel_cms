@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Landing;
 
+use App\MicroPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
@@ -17,9 +18,10 @@ class LandingController extends Controller
      */
     public function index()
     {
+        $mposts = MicroPost::all()->take(5);
         $instagram  = new Instagram('585490996.1677ed0.0b3da7cec581408a99df717378c11d5d');
         $instagrams = $instagram->get();
-        return view('landing.main', compact('instagrams'));
+        return view('landing.main', compact('instagrams','mposts'));
     }
 
     /**

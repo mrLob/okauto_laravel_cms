@@ -119,10 +119,10 @@
                             <div class="card-title">
                             <div class="title" style="font-size: 1.5rem;">Как нас найти?</div>
                                 <div class="description" style="font-size: 1rem;">Наш автосервис находится на улице Гаспадарчая напротив молочного мира,на территории завода и заехать к нам очень легко</div>
-                                <button class="btn btn-primary">Найти</button>
+                                <a  href="https://maps.google.com/?q=@53.704249,23.830040" class="btn btn-primary">Найти</a>
                             </div>
                         </div>
-                        <div class="card card-fashion card-background" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=53.704249,23.830040&zoom=14&size=600x600&markers=color:red%7C53.704249,23.830040&&style=element:labels|visibility:on&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&key=');">
+                        <div class="card card-fashion card-background" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=53.704249,23.830040&zoom=15&size=600x600&scale=2&markers=color:red%7C53.704249,23.830040&&style=element:labels|visibility:on&style=element:geometry.stroke|visibility:on&maptype=hybrid&skey=');">
                         </div>
                     </div>
                 </div>
@@ -214,25 +214,28 @@
             <h2 class="title">Want to work with us?</h2>
             <p class="description">Your project is very important to us.</p>
             <div class="row">
+
                 <div class="col-lg-6 text-center ml-auto mr-auto col-md-8">
-                    <div class="input-group input-lg">
-                            <span class="input-group-addon">
-                                <i class="now-ui-icons users_circle-08"></i>
-                            </span>
-                        <input type="text" class="form-control" placeholder="First Name...">
-                    </div>
-                    <div class="input-group input-lg">
-                            <span class="input-group-addon">
-                                <i class="now-ui-icons ui-1_email-85"></i>
-                            </span>
-                        <input type="text" class="form-control" placeholder="Email...">
-                    </div>
-                    <div class="textarea-container">
-                        <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
-                    </div>
-                    <div class="send-button">
-                        <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>
-                    </div>
+                    <form>
+                        <div class="input-group input-lg">
+                                <span class="input-group-addon">
+                                    <i class="now-ui-icons users_circle-08"></i>
+                                </span>
+                            <input type="text" class="form-control" placeholder="Ваше имя / Тема обращения...">
+                        </div>
+                        <div class="input-group input-lg">
+                                <span class="input-group-addon">
+                                    <i class="now-ui-icons ui-1_email-85"></i>
+                                </span>
+                            <input type="text" class="form-control" placeholder="Email...">
+                        </div>
+                        <div class="textarea-container">
+                            <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Введите сообщение..."></textarea>
+                        </div>
+                        <div class="send-button">
+                            <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Отправить</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -241,26 +244,7 @@
         <div class="container">
             <nav>
                 <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://presentation.creative-tim.com">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license">
-                            License
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
             <div class="copyright">

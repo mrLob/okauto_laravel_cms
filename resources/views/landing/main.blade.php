@@ -1,4 +1,4 @@
-@extends('layouts.landing')
+@extends('layouts.landing',['mposts' => $mposts])
 
 @section('posts')
     <div id="posts_carousel" class="carousel slide">
@@ -11,15 +11,15 @@
                 <div class="card card-blog">
                     <div class="card-image">
                         <a href="#pablo">
-                            <img class="img img-raised rounded" src="assets/img/card-blog2.jpg">
+                            <img class="img img-raised rounded" src="{{$mposts[0]->image}}">
                         </a>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">
-                            That’s One Way To Ditch Your Passenger
+                            {{$mposts[0]->title}}
                         </h5>
                         <p class="card-description">
-                            As near as we can tell, this guy must have thought he was going over backwards and tapped the rear...
+                            {{$mposts[0]->body}}
                         </p>
                         <div class="card-footer">
                             <div class="author">
@@ -32,33 +32,34 @@
                     </div>
                 </div>
             </div>
+            @for($i = 1; $i <5; $i++)
             <div class="carousel-item justify-content-center">
                 <div class="card card-blog">
                     <div class="card-image">
                         <a href="#pablo">
-                            <img class="img rounded" src="assets/img/examples/card-blog18.jpg">
+                            <img class="img img-raised rounded" src="{{$mposts[$i]->image}}">
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="category text-danger">Animals</h6>
                         <h5 class="card-title">
-                            Shark Week: How to Watch It Like a Scientist
+                            {{$mposts[$i]->title}}
                         </h5>
                         <p class="card-description">
-                            Just when you thought it was safe to turn on your television, the Discovery Channel's "Shark Week"...
+                            {{$mposts[$i]->body}}
                         </p>
                         <div class="card-footer">
                             <div class="author">
-                                <img src="assets/img/julie.jpg" alt="..." class="avatar img-raised">
-                                <span>Mike John</span>
+
                             </div>
                             <div class="stats stats-right">
-                                <i class="now-ui-icons tech_watch-time"></i> 5 min read
+                                <i class="now-ui-icons tech_watch-time"></i>Новое
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endfor
+
         </div>
         <a class="carousel-control-prev" href="#posts_carousel" role="button" data-slide="prev">
             <i class="now-ui-icons arrows-1_minimal-left"></i>

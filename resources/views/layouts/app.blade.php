@@ -19,6 +19,7 @@
     <!-- CSS Files -->
     <link href="/assets_admin/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets_admin/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="/assets_admin/css/demo.css" rel="stylesheet" />
 </head>
@@ -106,26 +107,7 @@
             <div class="container">
                 <nav>
                     <ul class="footer-menu">
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Blog
-                            </a>
-                        </li>
+
                     </ul>
                     <p class="copyright text-center">
                         ©
@@ -155,7 +137,6 @@
 <script src="/assets_admin/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="/assets_admin/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
-<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-<script src="/assets_admin/js/demo.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 
 </html>
