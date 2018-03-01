@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Landing;
 
+
 use App\MicroPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 use Vinkla\Instagram\Instagram;
 
@@ -18,7 +20,7 @@ class LandingController extends Controller
      */
     public function index()
     {
-        $mposts = MicroPost::all()->take(5);
+        $mposts = DB::table('micro_posts')->orderBy('id','desc')->get();
         $instagram  = new Instagram('585490996.1677ed0.0b3da7cec581408a99df717378c11d5d');
         $instagrams = $instagram->get();
         return view('landing.main', compact('instagrams','mposts'));

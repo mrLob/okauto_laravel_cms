@@ -10,6 +10,7 @@
             <th>Почта</th>
             <th>Имя</th>
             <th>Сообщение</th>
+            <th></th>
         </thead>
         <tbody>
             @foreach($msg as $message)
@@ -17,11 +18,8 @@
                 <td>{{$message->email}}</td>
                 <td>{{$message->title}}</td>
                 <td>{{$message->body}}</td>
-                <td>
-                    {{--<form method="post" enctype="multipart/form-data" action="{{ route('category.update', $category->id)}}"id="theFormUp{{$category->id}}" style="display:inline">--}}
-                        {{--<input type="hidden" name="_token" value="{{ csrf_token() }}" />--}}
-                        {{--<a class="btn btn-info" type="submit" onclick="updateCategory({{$category->id}},'{{$category->name}}')">Изменить</a>--}}
-                    {{--</form>--}}
+                <td style="text-align: right">
+                    <a class="btn btn-info" href="{{route('messages.edit', $message->id)}}" style="margin-top: 5px; margin-bottom: 5px">Изменить</a>
                 </td>
             </tr>
             @endforeach

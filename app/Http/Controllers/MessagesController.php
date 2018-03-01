@@ -14,8 +14,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        $msg = EMessage::all();
-        return view('dash.messages',compact('msg'));
+        $msg = EMessage::all()->sortByDesc('id');
+        return view('dash.messages.index',compact('msg'));
     }
 
     /**

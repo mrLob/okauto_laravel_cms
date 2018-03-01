@@ -40,7 +40,7 @@
         <div class="navbar-translate">
             <a class="navbar-brand" href="#" rel="tooltip" data-placement="bottom" target="_blank">
                 <div class="logo-container">
-                    <img src="/assets/img/logo.png">
+                    {{--<img src="/assets/img/logo.png">--}}
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,6 +70,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                        <p class="hidden-lg-up">Instagram</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link btn btn-primary" href="https://www.creative-tim.com/product/now-ui-kit-pro" target="_blank">
                         <p>Связаться с нами</p>
                     </a>
@@ -86,12 +92,7 @@
                     <p class="hidden-lg-up">Facebook</p>
                 </a>
             </li>-->
-            <li class="nav-item">
-                <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                    <i class="fa fa-instagram"></i>
-                    <p class="hidden-lg-up">Instagram</p>
-                </a>
-            </li>
+
             </ul>
         </div>
     </div>
@@ -102,11 +103,11 @@
         <div class="page-header-image" data-parallax="true" style="background-image: url('/assets/img/examples/card-blog17.jpg');">
         </div>
         <div class="content-center">
-            <h1 class="title"><span style="color: #ffed00"> OK</span>auto</h1>
+            <h1 class="title"><img src="/assets/img/OK.png" width="100">auto</h1>
             <h3 class="description"><b>Автосервис</b></h3>
             <div class="separator separator-primary"></div>
             <div id="menu" class="button-container" style="margin-top: 190px">
-                <a class="btn btn-warning btn-lg btn-icon btn-simple btn-round" href="#map"><i class=" now-ui-icons arrows-1_minimal-down"></i></a>
+                <a class="btn btn-primary btn-lg btn-icon btn-simple btn-round" href="#map"><i class=" now-ui-icons arrows-1_minimal-down"></i></a>
             </div>
         </div>
     </div>
@@ -118,7 +119,9 @@
                         <div class="card card-fashion">
                             <div class="card-title">
                             <div class="title" style="font-size: 1.5rem;">Как нас найти?</div>
+                                <br>
                                 <div class="description" style="font-size: 1rem;">Наш автосервис находится на улице Гаспадарчая напротив молочного мира,на территории завода и заехать к нам очень легко</div>
+                                <br>
                                 <a  href="https://maps.google.com/?q=@53.704249,23.830040" class="btn btn-primary">Найти</a>
                             </div>
                         </div>
@@ -194,16 +197,19 @@
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <h2 class="title">О нашей работе</h2>
+                    <h3 class="description"> Отчеты о выполненой работе ,акции и новости можно получить через Instagram!</h3>
+                    <a href="#pablo" class="btn btn-primary btn-simple btn-round btn-lg">Подписаться!</a>
                 </div>
             </div>
+                <br>
             <div class="row">
                 <div class="col-md-12 ml-auto mr-auto text-center">
                     <div class="gallery-feed">
-                        @foreach($instagrams as $inst )
+                        @for($i = 0;$i < 8; $i++ )
                             <div class="gallery-item">
-                                    <img src="{{ $inst->images->standard_resolution->url }}"  class="img img-raised rounded" />
+                                    <img src="{{ $instagrams[$i]->images->standard_resolution->url }}"  class="img img-raised rounded" />
                             </div>
-                        @endforeach
+                        @endfor
                     </div>
                 </div>
             </div>

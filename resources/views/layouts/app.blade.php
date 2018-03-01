@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
     <link rel="apple-touch-icon" sizes="76x76" href="/assets_admin/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="/assets_admin/img/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets_admin/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>{{ config('app.name', 'Laravel') }}</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -30,17 +30,34 @@
         <div class="sidebar-wrapper">
             @auth
             <ul class="nav">
-                <li>
-                    <a class="nav-link" href="/dash/messages">
+                    @if(isset($msg))
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/dash/messages">
+                                <p><i class="nc-icon nc-alien-33"></i> Сообщения </p>
+                            </a>
 
-                        <p><i class="nc-icon nc-alien-33"></i> Сообщения </p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="/dash/posts">
-                        <p><i class="nc-icon nc-bell-55"></i> Микропосты</p>
-                    </a>
-                </li>
+                        </li>
+                    @else
+                        <li>
+                            <a class="nav-link" href="/dash/messages">
+                                <p><i class="nc-icon nc-alien-33"></i> Сообщения </p>
+                            </a>
+
+                        </li>
+                    @endif
+                    @if(isset($mposts))
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/dash/posts">
+                                <p><i class="nc-icon nc-bell-55"></i> Микропосты</p>
+                            </a>
+                        </li>
+                    @else
+                        <li>
+                            <a class="nav-link" href="/dash/posts">
+                                <p><i class="nc-icon nc-bell-55"></i> Микропосты</p>
+                            </a>
+                        </li>
+                    @endif
             </ul>
             @endauth
         </div>
@@ -82,7 +99,7 @@
                             @if (Route::has('login'))
                                 <div class="top-right links">
                                     @auth
-                                        <a href="{{ url('/login/home') }}">Home</a>
+                                        <a href="{{ url('/dash/home') }}">Home</a>
                                         <a href="{{ route('register') }}">Register</a>
                                     @else
 

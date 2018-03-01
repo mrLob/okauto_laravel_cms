@@ -25,15 +25,19 @@ Route::resource('eMessages','MessagesController');
 
 Route::group(['prefix' => 'dash', 'middleware'=> 'auth'], function(){
 
-    Route::get('/messages', 'MessagesController@index')->name('messages');
-
+    Route::group(['prefix' => 'messages'], function () {
+        Route::get('/', ['as' => 'messages.index', 'uses' =>'MessagesController@index']);
+        Route::get('/edit/{id}', ['as' => 'messages.edit', 'uses' => 'MessagesController@edit']);
+    });
     //TODO почитай как правильно роуты именовать где использовать get а где post
 
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', ['as' => 'micropost.index', 'uses' =>'MicroPostsController@index']);
         Route::get('/create', ['as' => 'micropost.create', 'uses' => 'MicroPostsController@create']);
-        Route::get('/update', ['as' => 'micropost.update', 'uses' => 'MicroPostsController@update']);
+        Route::get('/edit/{id}', ['as' => 'micropost.edit', 'uses' => 'MicroPostsController@edit']);
+        Route::post('/update', ['as' => 'micropost.update', 'uses' => 'MicroPostsController@update']);
         Route::post('/', ['as'=> 'micropost.store', 'uses' => 'MicroPostsController@store']);
+        Route::get('/delete/{id}', ['as' => 'micropost.delete', 'uses' => 'MicroPostsController@destroy']);
     });
 
     Route::get('/home', 'HomeController@index')->name('home');

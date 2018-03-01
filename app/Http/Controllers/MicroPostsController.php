@@ -15,7 +15,7 @@ class MicroPostsController extends Controller
      */
     public function index()
     {
-        $mposts = MicroPost::all();
+        $mposts = MicroPost::all()->sortByDesc('id');
         return view('dash.posts.index', compact('mposts'));
     }
 
@@ -70,9 +70,11 @@ class MicroPostsController extends Controller
      * @param  \App\MicroPost  $microPost
      * @return \Illuminate\Http\Response
      */
-    public function edit(MicroPost $microPost)
+    public function edit($id)
     {
-        //
+        $mpost = MicroPost::where('id', $id)->first();
+        return view('dash.posts.create',compact('mpost'));
+
     }
 
     /**
@@ -82,9 +84,19 @@ class MicroPostsController extends Controller
      * @param  \App\MicroPost  $microPost
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MicroPost $microPost)
+    public function update(Request $request)
     {
-        //
+        $data = $request->all();
+        $id = $data['_id'];
+        $mpost = MicroPost::all()->where('id', $id)->first();
+        if (array_key_exists('img_', $data)){
+            $file = $request->file('img_');
+            $data['img_'] = $this->imageResizer($file);
+        }
+        $mpost->update($data);
+        $mpost->save();
+        return $this->index();
+
     }
 
     /**
@@ -93,43 +105,20 @@ class MicroPostsController extends Controller
      * @param  \App\MicroPost  $microPost
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MicroPost $microPost)
+    public function destroy($id)
     {
-        //
+        $mpost = MicroPost::all()->where('id', $id)->first();
+        $mpost->delete();
+        return redirect(route('micropost.index'));
+
     }
     public function imageResizer($file){
         $image = Image::make($file);
-        $image->resize(500,325);
+        $image->resize(860,520);
         $thumbnail_image_name =  time().'.'.$file->getClientOriginalExtension();
         $image->save(public_path('storage/'.$thumbnail_image_name));
-        $saved_image_uri = $image->dirname.'/'.$image->basename;
+        $saved_image_uri = 'storage/'.$image->basename;
         return $saved_image_uri;
-    }
-    public function fileUpload(Request $request)
-
-    {
-
-        $this->validate($request, [
-
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
-        ]);
-
-
-        $image = $request->file('image');
-
-        $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-
-        $destinationPath = public_path('/images');
-
-        $image->move($destinationPath, $input['imagename']);
-
-
-        $this->postImage->add($input);
-
-
-        return back()->with('success','Image Upload successful');
-
     }
 
 }
