@@ -34,7 +34,8 @@
                         <label for="body" class="col-md-4 control-label">Содержание</label>
 
                         <div class="col-md-6">
-                            <input id="body" type="text" class="form-control" name="body" value="@if (isset($mpost)){{ $mpost->body}}@endif" required>
+                            <textarea id="body" type="text" class="form-control" name="body" value="@if (isset($mpost)){{ $mpost->body}}@endif" required>
+                            </textarea>
 
                             @if ($errors->has('body'))
                                 <span class="help-block">

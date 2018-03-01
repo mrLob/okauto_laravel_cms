@@ -22,7 +22,7 @@
         <th></th>
         </thead>
         <tbody>
-        @foreach($mposts as $post)
+        @foreach($pmposts as $post)
             <tr>
                 <td>{{$post->title}}</td>
                 <td>{{$post->body}}</td>
@@ -48,7 +48,7 @@
         <th>Сообщение</th>
         </thead>
         <tbody>
-        @foreach($msg as $message)
+        @foreach($pmsg as $message)
             <tr>
                 <td>{{$message->email}}</td>
                 <td>{{$message->title}}</td>

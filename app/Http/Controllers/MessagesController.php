@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EMessage;
 use Illuminate\Http\Request;
+use Validator;
 
 class MessagesController extends Controller
 {
@@ -25,7 +26,7 @@ class MessagesController extends Controller
      */
     public function create()
     {
-        $msg = new EMessage;
+
 
     }
 
@@ -37,7 +38,25 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = array(
+            'title'  => 'required|max:50',
+            'email' => 'required|email',
+            'body'  => 'required'
+        );
+
+        $data = $request->all();
+        $validation = Validator::make($data, $rules);
+        if ($validation->fails())
+        {
+            $errors = $validation->errors();
+            return redirect('/');
+        }
+        EMessage::create([
+            'title' => $data['title'],
+            'body' => $data['body'],
+            'email' => $data['email']
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -84,4 +103,5 @@ class MessagesController extends Controller
     {
         //
     }
+
 }

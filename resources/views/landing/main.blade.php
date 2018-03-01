@@ -18,7 +18,7 @@
                         <h5 class="card-title">
                             {{$mposts[0]->title}}
                         </h5>
-                        <p class="card-description">
+                        <p class="card-description" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                             {{$mposts[0]->body}}
                         </p>
                         <div class="card-footer">
@@ -26,7 +26,7 @@
 
                             </div>
                             <div class="stats stats-right">
-                                <i class="now-ui-icons tech_watch-time"></i>Новое
+                                <i class="now-ui-icons tech_watch-time"></i>{{Carbon\Carbon::parse($mposts[0]->created_at)->format('d m Y')}}
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                                 <h4 class="card-title">
                                     {{$mposts[$i]->title}}
                                 </h4>
-                                <p class="card-description" style="white-space: nowrap;overflow: hidden;">
+                                <p class="card-description" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                                     {{$mposts[$i]->body}}
                                 </p>
                                 <div class="card-footer">
@@ -54,7 +54,7 @@
 
                                     </div>
                                     <div class="stats stats-right">
-                                        <i class="now-ui-icons tech_watch-time"></i>Новое
+                                        <i class="now-ui-icons tech_watch-time"></i>{{Carbon\Carbon::parse($mposts[$i]->created_at)->format('d m Y')}}
                                     </div>
                                 </div>
                             </div>

@@ -28,6 +28,7 @@ Route::group(['prefix' => 'dash', 'middleware'=> 'auth'], function(){
     Route::group(['prefix' => 'messages'], function () {
         Route::get('/', ['as' => 'messages.index', 'uses' =>'MessagesController@index']);
         Route::get('/edit/{id}', ['as' => 'messages.edit', 'uses' => 'MessagesController@edit']);
+        Route::post('/', ['as'=> 'messages.store', 'uses' => 'MessagesController@store']);
     });
     //TODO почитай как правильно роуты именовать где использовать get а где post
 
@@ -39,7 +40,13 @@ Route::group(['prefix' => 'dash', 'middleware'=> 'auth'], function(){
         Route::post('/', ['as'=> 'micropost.store', 'uses' => 'MicroPostsController@store']);
         Route::get('/delete/{id}', ['as' => 'micropost.delete', 'uses' => 'MicroPostsController@destroy']);
     });
-
+    Route::group(['prefix' => 'services'], function () {
+        Route::get('/', ['as' => 'service.index', 'uses' =>'ServicesController@index']);
+        Route::get('/create', ['as' => 'service.create', 'uses' => 'ServicesController@create']);
+        Route::get('/edit/{id}', ['as' => 'service.edit', 'uses' => 'ServicesController@edit']);
+        Route::get('/delete/{id}', ['as' => 'service.delete', 'uses' => 'ServicesController@destroy']);
+        Route::post('/', ['as'=> 'service.store', 'uses' => 'ServicesController@store']);
+    });
     Route::get('/home', 'HomeController@index')->name('home');
 });
 

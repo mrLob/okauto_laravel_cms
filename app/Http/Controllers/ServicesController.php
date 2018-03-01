@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services;
+use App\Service;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -14,7 +14,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        //
+        $servs = Service::all()->sortByDesc('id');
+        return view('dash.services.index',compact('servs'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        return view('dash.services.create');
     }
 
     /**
@@ -35,7 +36,13 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Service::create([
+            'title' => $data['title'],
+            'body' => $data['body'],
+            'icon' => $data['icon']
+        ]);
+        return $this->index();
     }
 
     /**

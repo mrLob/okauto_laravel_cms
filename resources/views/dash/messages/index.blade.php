@@ -19,7 +19,7 @@
                 <td>{{$message->title}}</td>
                 <td>{{$message->body}}</td>
                 <td style="text-align: right">
-                    <a class="btn btn-info" href="{{route('messages.edit', $message->id)}}" style="margin-top: 5px; margin-bottom: 5px">Изменить</a>
+                    {{--<a class="btn btn-info" href="{{route('messages.edit', $message->id)}}" style="margin-top: 5px; margin-bottom: 5px">Изменить</a>--}}
                 </td>
             </tr>
             @endforeach

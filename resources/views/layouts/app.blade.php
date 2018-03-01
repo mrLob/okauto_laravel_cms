@@ -15,12 +15,15 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
+    <link rel="stylesheet" href="dist/css/bootstrap-iconpicker.min.css"/>
     <link href="/assets_admin/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets_admin/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <!-- CSS Just for demo purpose, don't include it in your project -->
+
     <link href="/assets_admin/css/demo.css" rel="stylesheet" />
 </head>
 
@@ -30,17 +33,32 @@
         <div class="sidebar-wrapper">
             @auth
             <ul class="nav">
+                    @if(isset($pmsg))
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/dash/home">
+                                <p><i class="nc-icon nc-app"></i> Панель управления </p>
+                            </a>
+
+                        </li>
+                    @else
+                        <li>
+                            <a class="nav-link" href="/dash/home">
+                                <p><i class="nc-icon nc-app"></i> Панель управления </p>
+                            </a>
+
+                        </li>
+                    @endif
                     @if(isset($msg))
                         <li class="nav-item active">
                             <a class="nav-link" href="/dash/messages">
-                                <p><i class="nc-icon nc-alien-33"></i> Сообщения </p>
+                                <p><i class="nc-icon nc-email-85"></i> Сообщения </p>
                             </a>
 
                         </li>
                     @else
                         <li>
                             <a class="nav-link" href="/dash/messages">
-                                <p><i class="nc-icon nc-alien-33"></i> Сообщения </p>
+                                <p><i class="nc-icon nc-email-85"></i> Сообщения </p>
                             </a>
 
                         </li>
@@ -55,6 +73,19 @@
                         <li>
                             <a class="nav-link" href="/dash/posts">
                                 <p><i class="nc-icon nc-bell-55"></i> Микропосты</p>
+                            </a>
+                        </li>
+                    @endif
+                    @if(isset($servs))
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/dash/services">
+                                <p><i class="nc-icon nc-umbrella-13"></i> Услуги</p>
+                            </a>
+                        </li>
+                    @else
+                        <li>
+                            <a class="nav-link" href="/dash/services">
+                                <p><i class="nc-icon nc-umbrella-13"></i> Услуги</p>
                             </a>
                         </li>
                     @endif
@@ -155,5 +186,8 @@
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="/assets_admin/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
-
+<!-- Bootstrap-Iconpicker Iconset -->
+<script type="text/javascript" src="dist/js/bootstrap-iconpicker-iconset-all.min.js"></script>
+<!-- Bootstrap-Iconpicker -->
+<script type="text/javascript" src="dist/js/bootstrap-iconpicker.min.js"></script>
 </html>

@@ -25,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $mposts = MicroPost::all()->sortByDesc('id')->take(3);
-        $msg = EMessage::all()->sortByDesc('id')->take(3);
-        return view('home',compact('mposts','msg'));
+        $pmposts = MicroPost::all()->sortByDesc('id')->take(3);
+        $pmsg = EMessage::all()->sortByDesc('id')->take(3);
+        return view('home',compact('pmposts','pmsg'));
     }
 }

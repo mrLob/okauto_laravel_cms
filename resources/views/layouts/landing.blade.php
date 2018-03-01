@@ -21,21 +21,11 @@
 <nav id="bar" class="navbar navbar-expand-lg bg-alter navbar-absolute ">
     <div class="container">
         <div class="dropdown button-dropdown">
-            <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                <span class="button-bar"></span>
-                <span class="button-bar"></span>
-                <span class="button-bar"></span>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-header">Dropdown header</a>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">One more separated link</a>
-            </div>
+           <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+            <span class="button-bar"></span>
+            <span class="button-bar"></span>
+            <span class="button-bar"></span>
+           </a>
         </div>
         <div class="navbar-translate">
             <a class="navbar-brand" href="#" rel="tooltip" data-placement="bottom" target="_blank">
@@ -58,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">
+                    <a href="#serv" class="nav-link">
                         <i class="now-ui-icons files_paper" aria-hidden="true"></i>
                         <p>Услуги</p>
                     </a>
@@ -70,29 +60,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="#feed" target="_blank">
                         <i class="fa fa-instagram"></i>
                         <p class="hidden-lg-up">Instagram</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-primary" href="https://www.creative-tim.com/product/now-ui-kit-pro" target="_blank">
+                    <a class="nav-link btn btn-primary" href="#messg" target="_blank">
                         <p>Связаться с нами</p>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                    <p class="hidden-lg-up">Twitter</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-                    <i class="fa fa-facebook-square"></i>
-                    <p class="hidden-lg-up">Facebook</p>
-                </a>
-            </li>-->
-
             </ul>
         </div>
     </div>
@@ -133,7 +110,7 @@
             <div class="separator separator-primary"></div>
         </div>
     </div>
-    <div class="features-8 section-image" style="background-image: url('/assets/img/bg19.jpg')">
+    <div id="serv" class="features-8 section-image" style="background-image: url('/assets/img/bg19.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">
@@ -215,31 +192,32 @@
             </div>
         </div>
     </div>
-    <div class="section section-contact-us text-center">
+    <div id="messg" class="section section-contact-us text-center">
         <div class="container">
-            <h2 class="title">Want to work with us?</h2>
-            <p class="description">Your project is very important to us.</p>
+            <h2 class="title">Хотите связаться с нами?</h2>
+            <p class="description">Вы можете сделать через эту форму!</p>
             <div class="row">
 
                 <div class="col-lg-6 text-center ml-auto mr-auto col-md-8">
-                    <form>
+                    <form method="POST" action="{{ route('messages.store') }} " enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <div class="input-group input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons users_circle-08"></i>
                                 </span>
-                            <input type="text" class="form-control" placeholder="Ваше имя / Тема обращения...">
+                            <input id="title" type="text" name="title" class="form-control" placeholder="Ваше имя / Тема обращения...">
                         </div>
                         <div class="input-group input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons ui-1_email-85"></i>
                                 </span>
-                            <input type="text" class="form-control" placeholder="Email...">
+                            <input id="email" type="text" name="email" class="form-control" placeholder="Email...">
                         </div>
                         <div class="textarea-container">
-                            <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Введите сообщение..."></textarea>
+                            <textarea id="body" class="form-control" name="body" rows="4" cols="80" placeholder="Введите сообщение..."></textarea>
                         </div>
                         <div class="send-button">
-                            <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Отправить</a>
+                            <button type="submit" class="btn btn-primary btn-round btn-block btn-lg">Отправить</button>
                         </div>
                     </form>
                 </div>
@@ -258,8 +236,8 @@
                 <script>
                     document.write(new Date().getFullYear())
                 </script>, Designed by
-                <a href="" target="_blank">Invision</a>. Coded by
-                <a href="" target="_blank">Creative Tim</a>.
+                <a href="" target="_blank"></a>. Coded by
+                <a href="" target="_blank"></a>.
             </div>
         </div>
     </footer>
