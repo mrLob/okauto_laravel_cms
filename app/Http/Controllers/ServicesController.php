@@ -42,7 +42,7 @@ class ServicesController extends Controller
             'body' => $data['body'],
             'icon' => $data['icon']
         ]);
-        return $this->index();
+        return redirect(route('service.index'));
     }
 
     /**
@@ -85,8 +85,10 @@ class ServicesController extends Controller
      * @param  \App\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Services $services)
+    public function destroy( $id)
     {
-        //
+        $serv = Service::all()->where('id', $id)->first();
+        $serv->delete();
+        return redirect(route('service.index'));
     }
 }

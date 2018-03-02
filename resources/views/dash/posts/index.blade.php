@@ -10,15 +10,17 @@
     </div>
     <table class="table table-hover table-striped">
         <thead>
+            <th>#</th>
             <th>Заголовок</th>
             <th>Содержание</th>
             <th>Изображение</th>
             <th></th>
-            <th style="text-align: right">Действия</th>
+            <th></th>
         </thead>
         <tbody>
             @foreach($mposts as $post)
             <tr>
+                <td>{{$post->id}}</td>
                 <td>{{$post->title}}</td>
                 <td>{{$post->body}}</td>
                 <td><img width="150" src="/{{$post->image}}"></td>
@@ -26,10 +28,7 @@
                 </td>
                 <td style="text-align: right">
                     <a class="btn btn-info" href="{{route('micropost.edit', $post->id)}}" style="margin-top: 5px; margin-bottom: 5px">Изменить</a>
-
                     <a class="btn btn-danger btn-s" href="{{ route('micropost.delete',  $post->id) }}">Удалить</a>
-
-
                 </td>
             </tr>
             @endforeach

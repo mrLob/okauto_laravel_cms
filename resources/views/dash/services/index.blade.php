@@ -10,27 +10,26 @@
     </div>
     <table class="table table-hover table-striped">
         <thead>
+            <th>#</th>
             <th>Заголовок</th>
             <th>Содержание</th>
-            <th>Изображение</th>
+            <th>Иконка</th>
             <th></th>
-            <th style="text-align: right">Действия</th>
+            <th></th>
         </thead>
         <tbody>
             @foreach($servs as $serv)
             <tr>
+                <td>{{$serv->id}}</td>
                 <td>{{$serv->title}}</td>
                 <td>{{$serv->body}}</td>
                 <td>{{$serv->icon}}</td>
                 <td>
-                    <i class="fa {{$serv->icon}}"></i>
+                    <i class="now-ui-icons {{$serv->icon}}"></i>
                 </td>
                 <td style="text-align: right">
                     <a class="btn btn-info" href="{{route('service.edit', $serv->id)}}" style="margin-top: 5px; margin-bottom: 5px">Изменить</a>
-
                     <a class="btn btn-danger btn-s" href="{{ route('service.delete',  $serv->id) }}">Удалить</a>
-
-
                 </td>
             </tr>
             @endforeach

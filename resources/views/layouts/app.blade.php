@@ -15,10 +15,9 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-
+    <link href="/assets_admin/css/now-ui-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link rel="stylesheet" href="dist/css/bootstrap-iconpicker.min.css"/>
     <link href="/assets_admin/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets_admin/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
@@ -95,7 +94,7 @@
     </div>
     <div class="main-panel">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+        <nav class="navbar navbar-expand-lg"  color-on-scroll="500">
             <div class=" container-fluid  ">
                 <a class="navbar-brand" href="/"> {{ config('app.name', 'Laravel') }} </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">

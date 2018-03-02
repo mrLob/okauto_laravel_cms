@@ -34,7 +34,8 @@
                         <label for="body" class="col-md-4 control-label">Содержание</label>
 
                         <div class="col-md-6">
-                            <textarea id="body" type="text" class="form-control" name="body" value="@if (isset($mpost)){{ $mpost->body}}@endif" required>
+                            <textarea id="body" type="text" class="form-control" name="body" rows="4" cols="80" required>
+                                @if (isset($mpost)){{ $mpost->body}}@endif
                             </textarea>
 
                             @if ($errors->has('body'))

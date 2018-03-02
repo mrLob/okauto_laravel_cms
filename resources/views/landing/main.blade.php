@@ -1,4 +1,4 @@
-@extends('layouts.landing',['mposts' => $mposts])
+@extends('layouts.landing',['mposts' => $mposts,'servs' => $servs])
 
 @section('posts')
     <div id="posts_carousel" class="carousel slide">
@@ -7,6 +7,7 @@
             <li data-target="#posts_carousel" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
+            @if(isset($mposts[0]))
             <div class="carousel-item active justify-content-center" data-toggle="modal" data-target="#myModal">
                 <div class="card card-blog" >
                     <div class="card-image">
@@ -31,8 +32,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+            @endif
             @for($i = 1; $i <5; $i++)
                 @if(!isset($mposts[$i])) @break @endif
                     <div class="carousel-item justify-content-center" data-toggle="modal" data-target="#myModal{{$i}}">
@@ -104,4 +105,23 @@
             <i class="now-ui-icons arrows-1_minimal-right"></i>
         </a>
     </div>
+@endsection
+
+@section('services')
+    @if(isset($servs[0]))
+        @for($i = 0;$i < 3;$i++)
+            @if(!isset($servs[$i])) @break @endif
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="info info-hover">
+                        <div class="icon icon-primary">
+                            <i class="now-ui-icons {{$servs[$i]->icon}}"></i>
+                        </div>
+                        <h4 class="info-title">{{$servs[$i]->title}}</h4>
+                        <p class="description">{{$servs[$i]->body}}</p>
+                    </div>
+                </div>
+            </div>
+        @endfor
+    @endif
 @endsection

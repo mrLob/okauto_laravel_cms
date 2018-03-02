@@ -21,7 +21,7 @@
 <nav id="bar" class="navbar navbar-expand-lg bg-alter navbar-absolute ">
     <div class="container">
         <div class="dropdown button-dropdown">
-           <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+           <a href="#" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
             <span class="button-bar"></span>
             <span class="button-bar"></span>
             <span class="button-bar"></span>
@@ -102,7 +102,7 @@
                                 <a  href="https://maps.google.com/?q=@53.704249,23.830040" class="btn btn-primary">Найти</a>
                             </div>
                         </div>
-                        <div class="card card-fashion card-background" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=53.704249,23.830040&zoom=15&size=600x600&scale=2&markers=color:red%7C53.704249,23.830040&&style=element:labels|visibility:on&style=element:geometry.stroke|visibility:on&maptype=hybrid&skey=');">
+                        <div class="card card-fashion card-background" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=53.704249,23.830040&zoom=15&size=600x600&scale=2&markers=color:red%7C53.704249,23.830040&&style=element:labels|visibility:on&style=element:geometry.stroke|visibility:on&maptype=hybrid&key=AIzaSyAbANEitW1SSsTld8h3fNtBgATdiRBt_Rw');">
                         </div>
                     </div>
                 </div>
@@ -119,39 +119,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="info text-center">
-                            <div class="icon">
-                                <i class="now-ui-icons shopping_tag-content"></i>
-                            </div>
-                            <h4 class="info-title">Накопительные скидки</h4>
-                            <p class="description">If you get a reply, further follow-ups are automatically stopped.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="info text-center">
-                            <div class="icon">
-                                <i class="now-ui-icons ui-1_email-85"></i>
-                            </div>
-                            <h4 class="info-title">Reply detection</h4>
-                            <p class="description">If you get a reply, further follow-ups are automatically stopped.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="info text-center">
-                            <div class="icon">
-                                <i class="now-ui-icons ui-1_email-85"></i>
-                            </div>
-                            <h4 class="info-title">Reply detection</h4>
-                            <p class="description">If you get a reply, further follow-ups are automatically stopped.</p>
-                        </div>
-                    </div>
-                </div>
+                @yield('services')
             </div>
         </div>
     </div>

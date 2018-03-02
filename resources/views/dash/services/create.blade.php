@@ -58,8 +58,9 @@
                 </form>
             </div>
         </div>
+        <br>
         <div id="cd-nav">
-            <a id="cd-nav-trigger" href="#0" class="cd-nav-trigger">Menu
+            <a id="cd-nav-trigger" href="#0" class="cd-nav-trigger">Список доступных иконок
                 <span></span>
             </a>
             <nav>
