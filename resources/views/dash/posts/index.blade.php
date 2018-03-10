@@ -27,8 +27,8 @@
                 <td>
                 </td>
                 <td style="text-align: right">
-                    <a class="btn btn-info" href="{{route('micropost.edit', $post->id)}}" style="margin-top: 5px; margin-bottom: 5px">Изменить</a>
-                    <a class="btn btn-danger btn-s" href="{{ route('micropost.delete',  $post->id) }}">Удалить</a>
+                    <a class="btn btn-info" href="{{route('micropost.edit', $post->id)}}" style="margin-top: 5px; margin-bottom: 5px"><i class="nc-icon nc-settings-90"></i></a>
+                    <a class="btn btn-danger btn-s" href="{{ route('micropost.delete',  $post->id) }}"><i class="nc-icon nc-simple-remove"></i></a>
                 </td>
             </tr>
             @endforeach

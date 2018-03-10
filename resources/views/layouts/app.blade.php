@@ -22,8 +22,6 @@
     <link href="/assets_admin/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <!-- CSS Just for demo purpose, don't include it in your project -->
-
-    <link href="/assets_admin/css/demo.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -129,11 +127,11 @@
                             @if (Route::has('login'))
                                 <div class="top-right links">
                                     @auth
-                                        <a href="{{ url('/dash/home') }}">Home</a>
-                                        <a href="{{ route('register') }}">Register</a>
+                                        <a href="{{ url('/dash/home') }}"><i class="nc-icon nc-app"></i>Панель</a>
+                                        
+                                        <a href="{{ route('register') }}">Регистрация</a>
                                     @else
-
-                                        <a href="{{ route('login') }}">Login</a>
+                                        <a class="nav-link" href="{{ route('login') }}">Вход</a>
                                     @endauth
                                 </div>
                             @endif
