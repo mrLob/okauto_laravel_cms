@@ -77,10 +77,10 @@
 <!-- End Navbar -->
 <div class="wrapper">
     <div class="page-header page-header-full" filter-color="black">
-        <div class="page-header-image" data-parallax="true" style="background-image: url('/assets/img/examples/card-blog17.jpg');">
+        <div class="page-header-image" data-parallax="true" style="background-image: url('/assets/img/photo/IMG_3383.jpg');">
         </div>
         <div class="content-center">
-            <h1 class="title"><img src="/assets/img/OK.png" width="100">auto</h1>
+            <h1 class="title"><img src="/assets/img/OK.png" width="120">auto</h1>
             <h3 class="description"><b>Автосервис</b></h3>
             <div class="separator separator-primary"></div>
             <div id="menu" class="button-container" style="margin-top: 190px">
@@ -110,7 +110,7 @@
             <div class="separator separator-primary"></div>
         </div>
     </div>
-    <div id="serv" class="features-8 section-image" style="background-image: url('/assets/img/bg19.jpg')">
+    <div id="serv" class="features-8 section-image" style="background-image: url('/assets/img/photo/IMG_3389.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">

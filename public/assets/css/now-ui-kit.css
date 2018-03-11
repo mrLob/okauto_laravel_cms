@@ -5058,7 +5058,7 @@ p {
 .description,
 .card-description,
 .footer-big p {
-    color: #9A9A9A;
+    color: rgb(110, 110, 110);
     font-weight: 300;
 }
 
@@ -12088,6 +12088,10 @@ Created using IcoMoon - icomoon.io
     }
     .header-3 .btn {
         margin-bottom: 10px;
+    }
+    .card-container .card-fashion {
+        margin: 0 2%;
+        width: 95%;
     }
     .card.card-fashion:not(.card-background):before {
         display: none;

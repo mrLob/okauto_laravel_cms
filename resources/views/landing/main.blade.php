@@ -62,6 +62,7 @@
                         </div>
                     </div>
             @endfor
+            @if(isset($mposts[0]))
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -78,6 +79,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             @for($i = 1; $i <5; $i++)
                 @if(!isset($mposts[$i])) @break @endif
                     <div class="modal fade" id="myModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
