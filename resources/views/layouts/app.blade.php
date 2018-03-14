@@ -22,6 +22,7 @@
     <link href="/assets_admin/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="/assets_admin/css/pick.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -183,8 +184,5 @@
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="/assets_admin/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
-<!-- Bootstrap-Iconpicker Iconset -->
-<script type="text/javascript" src="dist/js/bootstrap-iconpicker-iconset-all.min.js"></script>
-<!-- Bootstrap-Iconpicker -->
-<script type="text/javascript" src="dist/js/bootstrap-iconpicker.min.js"></script>
+<script src="/assets_admin/js/pick.js"></script>
 </html>

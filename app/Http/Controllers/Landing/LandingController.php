@@ -21,7 +21,7 @@ class LandingController extends Controller
     public function index()
     {
         $mposts = DB::table('micro_posts')->orderBy('id','desc')->get();
-        $servs = DB::table('services')->orderBy('id','desc')->get();
+        $servs = DB::table('services')->orderBy('id','desc')->take(10)->get();
         $instagram  = new Instagram('585490996.1677ed0.0b3da7cec581408a99df717378c11d5d');
         $instagrams = $instagram->get();
         return view('landing.main', compact('instagrams','mposts','servs'));

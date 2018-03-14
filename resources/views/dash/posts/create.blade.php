@@ -25,7 +25,7 @@
                             @if ($errors->has('title'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('title') }}</strong>
-                                    </span>
+                                </span>
                             @endif
                         </div>
 
@@ -34,9 +34,7 @@
                         <label for="body" class="col-md-4 control-label">Содержание</label>
 
                         <div class="col-md-6">
-                            <textarea id="body" type="text" class="form-control" name="body" rows="4" cols="80" required>
-                                @if (isset($mpost)){{ $mpost->body}}@endif
-                            </textarea>
+                            <textarea id="body" type="text" class="form-control" name="body" aria-valuetext="" required>@if (isset($mpost)){{ $mpost->body}}@endif</textarea>
 
                             @if ($errors->has('body'))
                                 <span class="help-block">
@@ -45,9 +43,10 @@
                             @endif
                         </div>
                     </div>
+
                     <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                         <div class="col-md-6">
-                            <label>Изображение</label><br>
+                            <label>Изображение ( весом до 2Мб)</label><br>
                             <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                 <div class="fileinput-new thumbnail img-raised">
                                     <img src="@if(isset($mpost)){{$mpost->image}}@endif" alt="...">
@@ -59,7 +58,7 @@
                                         <span class="fileinput-exists">Изменить</span>
                                         <input type="file" name="img_" value="@if(isset($mpost)){{$mpost->image}}@endif">
                                     </span>
-                                    <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="now-ui-icons ui-1_simple-remove"></i> Убрать</a>
+                                    <a href="#" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="now-ui-icons ui-1_simple-remove"></i> Убрать</a>
                                 </div>
                             </div>
                         </div>

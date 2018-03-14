@@ -115,7 +115,7 @@ class MicroPostsController extends Controller
     public function imageResizer($file){
         $image = Image::make($file);
         $image->resize(860,520);
-        $thumbnail_image_name =  time().'.'.$file->getClientOriginalExtension();
+        $thumbnail_image_name = date('H_i_s').'.'.$file->getClientOriginalExtension();
         $image->save(public_path('storage/'.$thumbnail_image_name));
         $saved_image_uri = 'storage/'.$image->basename;
         return $saved_image_uri;

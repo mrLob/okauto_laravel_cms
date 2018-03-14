@@ -11,7 +11,7 @@
             <div class="carousel-item active justify-content-center" data-toggle="modal" data-target="#myModal">
                 <div class="card card-blog" >
                     <div class="card-image">
-                        <a href="#pablo">
+                        <a>
                             <img class="img img-raised rounded" src="{{$mposts[0]->image}}">
                         </a>
                     </div>
@@ -27,7 +27,7 @@
 
                             </div>
                             <div class="stats stats-right">
-                                <i class="now-ui-icons tech_watch-time"></i>{{Carbon\Carbon::parse($mposts[0]->created_at)->format('d m Y')}}
+                                <i class="now-ui-icons tech_watch-time" style="color: red"></i>{{Carbon\Carbon::parse($mposts[0]->created_at)->format('d m Y')}}
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                     <div class="carousel-item justify-content-center" data-toggle="modal" data-target="#myModal{{$i}}">
                         <div class="card card-blog">
                             <div class="card-image">
-                                <a href="#pablo">
+                                <a>
                                     <img class="img img-raised rounded" src="{{$mposts[$i]->image}}">
                                 </a>
                             </div>
@@ -111,13 +111,13 @@
 
 @section('services')
     @if(isset($servs[0]))
-        @for($i = 0;$i < 3;$i++)
+        @for($i = 0;$i < 8;$i++)
             @if(!isset($servs[$i])) @break @endif
             <div class="col-md-4">
                 <div class="card">
                     <div class="info info-hover">
                         <div class="icon icon-primary">
-                            <i class="now-ui-icons {{$servs[$i]->icon}}"></i>
+                            <i class="{{$servs[$i]->icon}}"></i>
                         </div>
                         <h4 class="info-title">{{$servs[$i]->title}}</h4>
                         <p class="description">{{$servs[$i]->body}}</p>
