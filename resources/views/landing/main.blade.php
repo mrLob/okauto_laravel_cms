@@ -82,7 +82,7 @@
             @endif
             @for($i = 1; $i <5; $i++)
                 @if(!isset($mposts[$i])) @break @endif
-                    <div class="modal fade" id="myModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="servModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -114,16 +114,36 @@
         @for($i = 0;$i < 8;$i++)
             @if(!isset($servs[$i])) @break @endif
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" data-toggle="modal" data-target="#myModal">
                     <div class="info info-hover">
                         <div class="icon icon-primary">
                             <i class="{{$servs[$i]->icon}}"></i>
                         </div>
                         <h4 class="info-title">{{$servs[$i]->title}}</h4>
-                        <p class="description">{{$servs[$i]->body}}</p>
+                        <p class="description" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{$servs[$i]->body}}</p>
                     </div>
                 </div>
             </div>
         @endfor
     @endif
+    @for($i = 0; $i < 8; $i++)
+        @if(!isset($servs[$i])) @break @endif
+            <div class="modal fade" id="myModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">{{$servs[$i]->title}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            {{$servs[$i]->body}}
+                        </div>
+                        <div class="modal-footer" style="text-align: center">
+                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    @endfor
+
 @endsection
