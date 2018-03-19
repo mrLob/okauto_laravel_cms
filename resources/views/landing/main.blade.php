@@ -4,7 +4,10 @@
     <div id="posts_carousel" class="carousel slide">
         <ol class="carousel-indicators">
             <li data-target="#posts_carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#posts_carousel" data-slide-to="1"></li>
+            @for($i = 1; $i <5; $i++)
+                @if(!isset($mposts[$i])) @break @endif
+            <li data-target="#posts_carousel" data-slide-to="{{$i}}"></li>
+            @endfor
         </ol>
         <div class="carousel-inner" role="listbox">
             @if(isset($mposts[0]))
@@ -62,43 +65,45 @@
                         </div>
                     </div>
             @endfor
-            @if(isset($mposts[0]))
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">{{$mposts[0]->title}}</h4>
-                        </div>
-                        <div class="modal-body">
-                            {{$mposts[0]->body}}
-                        </div>
-                        <div class="modal-footer" style="text-align: center">
-                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Закрыть</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endif
-            @for($i = 1; $i <5; $i++)
-                @if(!isset($mposts[$i])) @break @endif
-                    <div class="modal fade" id="servModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel">{{$mposts[$i]->title}}</h4>
-                                </div>
-                                <div class="modal-body">
-                                    {{$mposts[$i]->body}}
-                                </div>
-                                <div class="modal-footer" style="text-align: center">
-                                    <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Закрыть</button>
-                                </div>
+            <!--noindex-->
+                @if(isset($mposts[0]))
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">{{$mposts[0]->title}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                {{$mposts[0]->body}}
+                            </div>
+                            <div class="modal-footer" style="text-align: center">
+                                <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Закрыть</button>
                             </div>
                         </div>
                     </div>
-            @endfor
+                </div>
+                @endif
+                @for($i = 1; $i <5; $i++)
+                    @if(!isset($mposts[$i])) @break @endif
+                        <div class="modal fade" id="servModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">{{$mposts[$i]->title}}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{$mposts[$i]->body}}
+                                    </div>
+                                    <div class="modal-footer" style="text-align: center">
+                                        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Закрыть</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                @endfor
+            <!--/noindex-->
         </div>
         <a class="carousel-control-prev" href="#posts_carousel" role="button" data-slide="prev">
             <i class="now-ui-icons arrows-1_minimal-left"></i>
@@ -126,6 +131,7 @@
             </div>
         @endfor
     @endif
+    <!--noindex-->
     @for($i = 0; $i < 8; $i++)
         @if(!isset($servs[$i])) @break @endif
             <div class="modal fade" id="myModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -145,5 +151,5 @@
                 </div>
             </div>
     @endfor
-
+    <!--/noindex-->
 @endsection

@@ -67,20 +67,21 @@
                     @endif
                 </form>
             </div>
-            <button class="btn btn-default" role="iconpicker"></button>
         </div>
         <br>
     </div>
-    <button type="button" class="btn btn-primary picker-button">Pick an Icon</button>
-	<span class="demo-icon"></span>
 </div>
 
 <div id="iconPicker" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+                <button type="button" id="change-icon" class="btn btn-success">
+                    <span class="fa fa-check-circle-o"></span>
+                    Выбрать
+                </button>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Icon Picker</h4>
+				<h4 class="modal-title">Выбор иконки</h4>
 			</div>
 			<div class="modal-body">
 				<div>
