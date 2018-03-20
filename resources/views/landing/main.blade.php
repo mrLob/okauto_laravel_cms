@@ -36,6 +36,8 @@
                     </div>
                 </div>
             </div>
+            @else
+                <h4>Скоро будут :)</h4>
             @endif
             @for($i = 1; $i <5; $i++)
                 @if(!isset($mposts[$i])) @break @endif
@@ -119,7 +121,7 @@
         @for($i = 0;$i < 8;$i++)
             @if(!isset($servs[$i])) @break @endif
             <div class="col-md-4">
-                <div class="card" data-toggle="modal" data-target="#myModal">
+                <div class="card" data-toggle="modal" data-target="#myModal{{$i}}">
                     <div class="info info-hover">
                         <div class="icon icon-primary">
                             <i class="{{$servs[$i]->icon}}"></i>

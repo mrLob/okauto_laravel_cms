@@ -19,6 +19,10 @@
 </head>
 
 <body class="landing-page">
+    <div class="floating-action-button">
+        <a href="tel:+375333111414" class="btn btn-round" style="background-color: #ffcd56;font-size: 1.5rem;"><i class="fa fa-phone" aria-hidden="true"></i>
+        </a>
+    </div>
 <!-- Navbar -->
 <nav id="bar" class="navbar navbar-expand-lg bg-alter navbar-absolute ">
     <div class="container">
@@ -62,9 +66,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="#feed" target="_blank">
+                    <a class="nav-link" rel="tooltip" title="Подписывайтесь на нас в Instagram" data-placement="bottom" href="#feed" target="_blank">
                         <i class="fa fa-instagram"></i>
-                        <p class="hidden-lg-up">Instagram</p>
+                        <p class="hidden-lg-up">О наших работах</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -83,7 +87,7 @@
         </div>
         <div class="content-center">
             <h1 class="title"><img src="/assets/img/OK.png" width="120">auto</h1>
-            <h3 class="description"><b>Автосервис</b></h3>
+            <h3 class="description"><b>Автосервис</b><p><a class="btn btn-simple" href="tel:+375333111414"  style="font-size: 1rem;border-width:0;color: rgba(255, 255, 255, 0.8);"><i class="fa fa-phone" aria-hidden="true"></i>+375 33 311-14-14</a></p></h3>
             <div class="separator separator-primary"></div>
             <div id="menu" class="button-container" style="margin-top: 190px">
                 <a class="btn btn-primary btn-lg btn-icon btn-simple btn-round" href="#map"><i class=" now-ui-icons arrows-1_minimal-down"></i></a>
@@ -117,7 +121,7 @@
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <h2 class="title">Наши услуги</h2>
-                    <h4 class="description text-white">If you’re selected for ALPHA you’ll also get 3 tickets, opportunity to access Investor Office Hours and Mentor Hours and much more all for €850.</h4>
+                    <h4 class="description text-white"></h4>
                 </div>
             </div>
             <div class="row">
@@ -211,7 +215,6 @@
             </div>
         </div>
     </footer>
-
 </body>
 <!--   Core JS Files   -->
 <script src="/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
