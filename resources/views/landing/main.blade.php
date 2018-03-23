@@ -121,7 +121,7 @@
         @for($i = 0;$i < 4;$i++)
             @if(!isset($servs[$i])) @break @endif
             <div class="col-md-3">
-                <div class="card" style="height: 270px;" data-toggle="modal" data-target="#myModal{{$i}}">
+                <div class="card" style="height: 240px;" data-toggle="modal" data-target="#myModal{{$i}}">
                     <div class="info info-hover">
                         <div class="icon icon-primary">
                             <i class="{{$servs[$i]->icon}}"></i>
