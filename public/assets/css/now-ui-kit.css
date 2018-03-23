@@ -6919,7 +6919,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .info.info-hover:hover .icon.icon-primary.icon-circle {
-    box-shadow: 0px 15px 30px 0px rgba(249, 99, 50, 0.35);
+    box-shadow: 0px 15px 30px 0px rgba(249, 202, 50, 0.35);
 }
 
 .info.info-hover:hover .icon.icon-info.icon-circle {
@@ -6951,7 +6951,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .info.info-hover:hover .icon.icon-primary+.info-title {
-    color: #f96332;
+    color: #f2c645;
 }
 
 .info.info-hover:hover .icon.icon-success+.info-title {
@@ -7028,11 +7028,11 @@ Created using IcoMoon - icomoon.io
 }
 
 .icon.icon-primary {
-    color: #f96332;
+    color: #f2c645;
 }
 
 .icon.icon-primary.icon-circle {
-    box-shadow: 0px 9px 30px -6px rgba(249, 99, 50, 0.3);
+    box-shadow: 0px 9px 30px -6px rgba(249, 196, 50, 0.3);
 }
 
 .icon.icon-info {
@@ -8337,7 +8337,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .card-testimonial .icon.icon-primary i {
-    color: #ffd056;
+    color: #f2c645;
 }
 
 .card-testimonial .icon.icon-info i {
@@ -8444,8 +8444,8 @@ Created using IcoMoon - icomoon.io
 }
 
 .card-pricing .icon.icon-primary i {
-    box-shadow: 0px 9px 30px -6px #f96332;
-    color: #f96332;
+    box-shadow: 0px 9px 30px -6px #f2c645;
+    color: #f2c645;
 }
 
 .card-pricing .icon.icon-info i {
@@ -12156,6 +12156,9 @@ Created using IcoMoon - icomoon.io
 @media screen and (max-width: 517px) {
     .alert .alert-icon {
         margin-top: 10px;
+    }
+    .servs-dis{
+        display: none;
     }
 }
 

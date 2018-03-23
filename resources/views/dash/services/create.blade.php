@@ -33,8 +33,7 @@
                         <label for="body" class="col-md-4 control-label">Содержание</label>
 
                         <div class="col-md-6">
-                            <input id="body" type="text" class="form-control" name="body" value="@if (isset($serv)){{ $serv->body}}@endif" required>
-
+                            <textarea id="body" type="text" class="form-control" name="body" aria-valuetext="" required>@if (isset($serv)){{ $serv->body}}@endif</textarea>
                             @if ($errors->has('body'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>

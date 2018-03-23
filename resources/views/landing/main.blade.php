@@ -118,40 +118,61 @@
 
 @section('services')
     @if(isset($servs[0]))
-        @for($i = 0;$i < 8;$i++)
+        @for($i = 0;$i < 4;$i++)
             @if(!isset($servs[$i])) @break @endif
-            <div class="col-md-4">
-                <div class="card" data-toggle="modal" data-target="#myModal{{$i}}">
+            <div class="col-md-3">
+                <div class="card" style="height: 270px;" data-toggle="modal" data-target="#myModal{{$i}}">
                     <div class="info info-hover">
                         <div class="icon icon-primary">
                             <i class="{{$servs[$i]->icon}}"></i>
                         </div>
-                        <h4 class="info-title">{{$servs[$i]->title}}</h4>
+                        <h5 class="info-title">{{$servs[$i]->title}}</h5>
                         <p class="description" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{$servs[$i]->body}}</p>
                     </div>
                 </div>
             </div>
         @endfor
-    @endif
-    <!--noindex-->
-    @for($i = 0; $i < 8; $i++)
+        @for($i = 4; $i < 8;$i++)
         @if(!isset($servs[$i])) @break @endif
-            <div class="modal fade" id="myModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">{{$servs[$i]->title}}</h4>
-                        </div>
-                        <div class="modal-body">
-                            {{$servs[$i]->body}}
-                        </div>
-                        <div class="modal-footer" style="text-align: center">
-                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Закрыть</button>
+            <div class="col-md-7 ml-auto mr-auto text-center">
+                <div class="info-horizontal" style="height: 70px;margin: 10px;text-shadow: 0 0 10px rgba(0,0,0,1.2); border-radius: 0.1875rem;color:#212738;">
+                    <div class="description" data-toggle="modal" data-target="#myModal{{$i}}">
+                        <h3>
+                            <div class="icon icon-primary">
+                                <i class="{{$servs[$i]->icon}}"></i>
+                            </div>
+                            {{$servs[$i]->title}}
+                        </h3>
+                        <div class="servs-dis">
+                            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{$servs[$i]->body}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-    @endfor
-    <!--/noindex-->
+        @endfor
+    @endif
+@endsection
+
+@section('service-modal')
+ <!--noindex-->
+ @for($i = 0; $i < 8; $i++)
+ @if(!isset($servs[$i])) @break @endif
+     <div class="modal fade" id="myModal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title" id="myModalLabel">{{$servs[$i]->title}}</h4>
+                 </div>
+                 <div class="modal-body">
+                     {{$servs[$i]->body}}
+                 </div>
+                 <div class="modal-footer" style="text-align: center">
+                     <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Закрыть</button>
+                 </div>
+             </div>
+         </div>
+     </div>
+@endfor
+<!--/noindex-->
 @endsection

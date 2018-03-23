@@ -90,7 +90,7 @@
             <h3 class="description"><b>Автосервис</b><p><a class="btn btn-simple" href="tel:+375333111414"  style="font-size: 1rem;border-width:0;color: rgba(255, 255, 255, 0.8);"><i class="fa fa-phone" aria-hidden="true"></i>+375 33 311-14-14</a></p></h3>
             <div class="separator separator-primary"></div>
             <div id="menu" class="button-container" style="margin-top: 190px">
-                <a class="btn btn-primary btn-lg btn-icon btn-simple btn-round" href="#map"><i class=" now-ui-icons arrows-1_minimal-down"></i></a>
+                <a class="btn btn-primary btn-lg btn-icon btn-simple btn-round" href="#map"><i class="now-ui-icons arrows-1_minimal-down" style="text-shadow: 0 0 10px rgba(0,0,0,0.5);" ></i></a>
             </div>
         </div>
     </div>
@@ -129,6 +129,7 @@
             </div>
         </div>
     </div>
+    @yield('service-modal')
     <div id="posts" class="testimonials-2">
         <div class="container">
             <div class="row">
