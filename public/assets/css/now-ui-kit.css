@@ -12195,3 +12195,9 @@ Created using IcoMoon - icomoon.io
     margin-left: 50px;
     z-index: 10;
   }
+.blur{
+    position:relative;
+}
+.blur:after{
+    height: 70px;width: 100%;position: absolute;filter: blur(13px);background: url('/assets/img/photo/IMG_3389.jpg') no-repeat center bottom fixed;background-color: rgba(0, 0, 0, 0.5);z-index: 1;
+}

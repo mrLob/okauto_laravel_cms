@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="Keywords" content="Гродно, Hrodno"/> 
+    <meta name="Keywords" content="химчистка авто, автомобиль ремонт, автохимчистка в гродно, химчистка салона авто, автосервис, гродно ремонт, замена масла, гаспадарчая, гаспадарчая ремонт авто"/>
     <meta name="description" content="Специализируемся на химчистке, полировке, шиномонтаже и СТО. Номер для связи +375 33 311-14-14">
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="/assets/img/favicon.png">

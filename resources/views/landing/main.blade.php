@@ -135,19 +135,22 @@
         @for($i = 4; $i < 8;$i++)
         @if(!isset($servs[$i])) @break @endif
             <div class="col-md-7 ml-auto mr-auto text-center">
-                <div class="info-horizontal" style="height: 70px;margin: 10px;text-shadow: 0 0 10px rgba(0,0,0,1.2); border-radius: 0.1875rem;color:#212738;">
+            <div class="blur"style=""></div>
+            <div class="servs-dis" >
+                <div class="info-horizontal" style="height: 70px;margin: 10px;text-shadow: 0 0 10px rgba(0,0,0,2); border-radius: 0.1875rem;color:#212738;">
                     <div class="description" data-toggle="modal" data-target="#myModal{{$i}}">
-                        <h3>
+                        <div style="font-size: 1.4rem;">
                             <div class="icon icon-primary">
                                 <i class="{{$servs[$i]->icon}}"></i>
                             </div>
-                            {{$servs[$i]->title}}
-                        </h3>
-                        <div class="servs-dis">
+                            <b>{{$servs[$i]->title}}</b>
+                        </div>
+                        <div>
                             <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{$servs[$i]->body}}</p>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         @endfor
     @endif
